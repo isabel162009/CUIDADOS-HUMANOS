@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cuidados Humanos - App</title>
+<meta name="theme-color" content="#111111">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Cuidados Humanos</h1>
+  <div id="relogio"></div>
+</header>
+
+<main>
+  <section class="grid">
+    <div class="box" id="box-agua">
+      <h2>Agua</h2>
+      <span class="valor" id="agua-hoje">0 / 8 copos</span>
+      <div class="barra"><div id="barra-agua"></div></div>
+      <button onclick="beberAgua()">Bebi agua</button>
+      <small>Proximo aviso em: <span id="timer-agua">40:00</span></small>
+    </div>
+
+    <div class="box" id="box-alongamento">
+      <h2>Alongamento</h2>
+      <span class="valor" id="alongamento-hoje">0 hoje</span>
+      <button onclick="fazerAlongamento()">Fiz alongamento</button>
+      <small>Proximo: <span id="timer-along">60:00</span></small>
+    </div>
+  </section>
+
+  <section class="box full">
+    <h2>Remedios</h2>
+    <div class="form-row">
+      <input type="text" id="nomeRemedio" placeholder="Nome do remedio">
+      <input type="time" id="horaRemedio">
+      <button onclick="addRemedio()">Adicionar</button>
+    </div>
+    <ul id="listaRemedios"></ul>
+  </section>
+
+  <section class="box full">
+    <h2>Alimentacao do Dia</h2>
+    <div id="listaRefeicoes"></div>
+  </section>
+
+  <section class="box full">
+    <h2>Historico</h2>
+    <div id="historico"></div>
+    <button class="secundario" onclick="limparHistorico()">Limpar historico</button>
+  </section>
+</main>
+
+<audio id="som" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg"></audio>
+<script src="script.js"></script>
+<script>if ("serviceWorker" in navigator) { window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(console.error)); }</script>
+</body>
+</html>
+

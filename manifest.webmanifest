@@ -1,0 +1,15 @@
+﻿{
+  "id": "./",
+  "name": "Cuidados Humanos",
+  "short_name": "Cuidados",
+  "description": "Lembretes e acompanhamento diário de cuidados pessoais.",
+  "lang": "pt-BR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f2f3f7",
+  "theme_color": "#111111",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
